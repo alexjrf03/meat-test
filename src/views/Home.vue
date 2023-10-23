@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'MeatTestHome',
+  name: 'HomeView',
 
   data() {
     return {
