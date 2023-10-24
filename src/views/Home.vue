@@ -1,12 +1,18 @@
 <template>
   <div>
     <Hero />
-    <v-row justify="end">
-      <v-col cols="12" md="3"></v-col>
-      <v-col cols="12" md="9">
-        <Cards />
-      </v-col>
+    <v-container>
+      <v-row justify="end">
+        <v-col cols="12" md="3">
+          <Filters @setFilter="filterVal"/>
+        </v-col>
+        <v-col cols="12" md="9">
+          <Articles  
+            :filter="filterParam"
+          />
+        </v-col>
     </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -14,26 +20,22 @@
 export default {
   name: 'HomeView',
   components:{
-    Hero: () => import(/* webpackPrefetch: true */ '@/components/hero/Hero.vue'),
-    Cards: () => import(/* webpackPrefetch: true */ '@/components/cards/Cards.vue'),
+    Hero: () => import(/* webpackPrefetch: true */ '@/components/hero/Hero'),
+    Articles: () => import(/* webpackPrefetch: true */ '@/components/articles/Articles'),
+    Filters: () => import(/* webpackPrefetch: true */ '@/components/filter/Filter'),
   },
 
   data() {
     return {
-      
+      filterParam: '',
     };
   },
 
-  mounted() {
-    
-  },
-
   methods: {
-    
+    filterVal(value){
+      console.log('in home', value);
+      this.filterParam = value
+    }
   },
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
