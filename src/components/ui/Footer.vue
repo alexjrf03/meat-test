@@ -90,21 +90,22 @@ export default {
       this.subscriptor.loading = true
       try {
         repository.createNewsletter(this.subscriptor.data).then(res => {
-          if(res.data){
+          if(res.status == 200){
             this.$root.notifications.show({
               title: 'Operación Exitosa!',
               info: 'Se ha enviado el formulario correctamente',
               color: 'success',
               icon: 'mdi-check-circle-outline'
             })
-          } else{
-            this.$root.notifications.show({
-              title: 'Operación Fallida!',
-              info: 'No se ha podido enviar el formulario',
-              color: 'error',
-              icon: 'mdi-close-circle-outline'
-            })
           }
+        }).catch((error)=>{
+          console.log(error);
+          this.$root.notifications.show({
+            title: 'Error!',
+            info: 'Ha ocurrido un error en el servidor, intente de nuevo más tarde',
+            color: 'error',
+            icon: 'mdi-close-circle-outline'
+          })
         });
         
       } catch (error) {

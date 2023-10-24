@@ -96,7 +96,6 @@ export default {
       try {
         repository.getArticles(valueFilter)
           .then(res => {
-            console.log(res);
             if (res.status === 200) {
               this.articles.data = res.data
             }
