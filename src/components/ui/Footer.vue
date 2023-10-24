@@ -1,22 +1,23 @@
 <template>
   <div>
-    <h2 class="mt-6">Contáctanos</h2>
+    <div class="d-flex justify-center">
+      <span class="title">Contáctanos</span> 
+    </div>
     <v-container>
-
-        <v-row justify="center">
-          <v-col cols="12" md="4">
-            <v-text-field
-              class="inputs"
-                outlined
-            ></v-text-field>
-          </v-col>
-  
-          <v-col cols="12" md="4">
-            <v-text-field
+      <v-row justify="center">
+        <v-col cols="12" md="4">
+          <v-text-field
+            class="inputs"
               outlined
-            ></v-text-field>
-          </v-col>
-        </v-row>
+          ></v-text-field>
+        </v-col>
+
+        <v-col cols="12" md="4">
+          <v-text-field
+            outlined
+          ></v-text-field>
+        </v-col>
+      </v-row>
 
       <v-row justify="center">
         <v-col cols="12" md="4">
@@ -69,6 +70,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .title{
+    position: absolute;
+    margin-top: 200px;
+    font-family: 'Caveat', cursive !important;
+    font-size: 80px !important;
+    font-weight: 700;
+    color: #3F454A !important;
+  }
 
   .send-button{
     width: 170px;

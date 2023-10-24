@@ -20,16 +20,14 @@
 </script>
 
 <style lang="scss" scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
   .hero{
-    position: absolute;
     width: 100%;
-    height: 741px;
+    height: 741px !important;
     left: 0px;
     top: 0px;
   }
   .gradient{
-    position: absolute;
+    position: absolute; 
     width: 100%;
     height: 228.28px;
     left: 0px;
