@@ -10,6 +10,6 @@ export default {
     },
 
     createNewsletter(data) {
-        return api.get(`${API_URL}/newsletter`, data);
+        return api.post(`${API_URL}/newsletter`, data);
     }
 };

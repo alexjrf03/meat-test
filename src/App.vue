@@ -4,6 +4,7 @@
       <Home />
     </v-main>
     <Footer/>
+    <Notifications ref="notifications"/>
   </v-app>
 </template>
 
@@ -15,11 +16,18 @@ export default {
   components: {
     Home: () => import(/* webpackPrefetch: true */ '@/views/Home.vue'),
     Footer: () => import(/* webpackPrefetch: true */ '@/components/ui/Footer'),
+    Notifications: () => import(/* webpackPrefetch: true */ '@/components/ui/Notifications.vue')
   },
 
   data: () => ({
     //
   }),
+  
+  mounted(){
+    setTimeout(() => {
+      this.$root.notifications = this.$refs.notifications
+    },500)
+  },
 };
 </script>
 
